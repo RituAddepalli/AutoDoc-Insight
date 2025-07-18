@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI PDF Q&A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #answerOutput {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Upload a PDF and Ask Questions</h1>
+
+    <!-- PDF Upload Section -->
+    <input type="file" id="pdfUpload" accept="application/pdf">
+    <button onclick="uploadPDF()">Upload PDF</button>
+
+    <h2>Ask a Question</h2>
+
+    <!-- Question Input Section -->
+    <input type="text" id="questionInput" placeholder="Enter your question">
+    <button onclick="askQuestion()">Ask</button>
+
+    <h2>Answer</h2>
+    <p id="answerOutput">Waiting for input...</p>
+
+ <script>
+    let uploadedFileName = "";  //  Store uploaded filename
+
+    function uploadPDF() {
+        const fileInput = document.getElementById("pdfUpload");
+        const pdfFile = fileInput.files[0];
+
+        if (!pdfFile) {
+            alert("Please select a PDF file first.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", pdfFile); /
+
+
+
+        fetch("http://localhost/gai_Vae_project/upload.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                uploadedFileName = data.filename;  //  Save filename
+                document.getElementById("answerOutput").innerText = "PDF uploaded: " + uploadedFileName;
+            } else {
+                document.getElementById("answerOutput").innerText = "Upload failed: " + data.message;
+            }
+        })
+        .catch(error => {
+            console.error("Upload Error:", error);
+            alert("Upload failed. Check console for more info.");
+        });
+    }
+
+    function askQuestion() {
+    const question = document.getElementById("questionInput").value;
+
+    if (!question) {
+        alert("Please enter a question.");
+        return;
+    }
+
+    fetch("http://localhost/gai_Vae_project/ask.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: question })
+    })
+  .then(response => response.text())
+.then(text => {
+    try {
+        const data = JSON.parse(text);
+        document.getElementById("answerOutput").innerText = data.answer;
+    } catch (e) {
+        console.error("Failed to parse JSON:", text);
+        document.getElementById("answerOutput").innerText = "Failed to parse response from server.";
+    }
+})
+
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error retrieving answer.");
+    });
+}
+
+</script>
+
+
+</body>
+</html>

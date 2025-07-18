@@ -1,0 +1,29 @@
+Command: C:\Users\Rhearitu\OneDrive\gai_Vae project\venv\Scripts\python.exe process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\Section-C  Module-3.pdf" "give summary of this"
+Execution Time: 0.06s
+Output:
+CMD: "C:\xampp\htdocs\gai_Vae_project\venv\Scripts\python.exe" process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\Section-C  Module-3.pdf" "what is hashing"
+Output:
+a series of orders or instructions
+
+CMD: "C:\xampp\htdocs\gai_Vae_project\venv\Scripts\python.exe" process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\Section-C  Module-3.pdf" "give summary of this"
+Output:
+
+CMD: "C:\xampp\htdocs\gai_Vae_project\venv\Scripts\python.exe" process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\Section-C  Module-3.pdf" "what is hashing"
+Output:
+a series of orders or instructions
+
+CMD: "C:\xampp\htdocs\gai_Vae_project/venv/Scripts/python.exe" process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\Section-C  Module-3.pdf" "what is sorting"
+Output:
+second hash-function
+
+
+CMD: "C:\xampp\htdocs\gai_Vae_project/venv/Scripts/python.exe" process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\Section-C  Module-3.pdf" "what is sorting"
+Output:
+second hash-function
+
+
+CMD: "C:\xampp\htdocs\gai_Vae_project/venv/Scripts/python.exe" process_pdf.py "C:\xampp\htdocs\gai_Vae_project\uploads\SECTION-C Module-4.pdf" "give summary of this"
+Output:
+The properties that separate a binary search tree from a regular binary tree is the property of both subtrees of each node are BSTs i.e. They have the above two properties: All nodes of left subtree are less than the root node, and all nodes of the right subtrees are greater than root node .  The following are the steps for seeking an element in a binary tree:Compare the searchable element to the tree's root node . The value of the element being searched matches that of the root node in the search tree .  AVL Tree was invented by GM Adelson - Velsky and EM Landis in 1962 . The tree is named AVL in the honour of its inventors . It is said to be balanced if balance factor of each node is between -1, 0 and 1 .  AVL trees are AVL because the differences between the heights of left and right subtrees for every node are less than or equal to 1 . For a tree to be unbalanced, minimum height must be at least 2 .  Rotation is a process of changing the structure without affecting the elements' order . Rotations are done on an unbalanced node based on the location of the newly inserted node . The process is knowns as retracing. This process is performed to maintain the AVL Balance criteria .  When BST becomes unbalanced, due to a node is inserted into the left subtree of C, then we perform LL rotation, LL rotation is clockwise rotation, which is applied on the edge below a node having balance factor 2 . In this rotation, a node's right child becomes the new root, while the original node's left child is the new child .  By full tree we mean the first node from the path of inserted node whose balance factor is other than -1, 0, or 1 . R L rotation = LL rotation + RR rotation, i.e., first RRrotation is performed on subtree and then LL rotation on full tree .  The Balance Factor of H and I is -2 . Since the BST is right-skewed, we will perform RR Rotation on node H. Since the element 7 is a leaf, we normally remove the element without disturbing any other node in the tree . In this case, we replace node 6 with node 6 that has a child node attached to it .  The balance of the tree becomes 1, and since it does not exceed 1 the tree is left as it is . The node is added to the right subtree of the node 2 and as the left child of node 4 .  B-Trees are self-balancing trees that are specialized in m-way (multi-way) searching . They are designed to overcome the limitations of Binary search trees . B trees are extended to accommodate the maximum number of children a tree can accommodate .  Each node in a B-Tree can contain multiple keys, which allows the tree to have a larger branching factor and thus a shallower height . This shallow height leads to less disk I/O, which results in faster search and insertion operations . B-Trees are particularly well suited for storage systems that have slow, bulky data access .
+
+
